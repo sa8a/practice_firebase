@@ -46,3 +46,7 @@ app.*.map.json
 # Firebase構成情報をアップロードしないため
 google-services.json
 GoogleService-Info.plist
+
+# 以下独自判断で一応追加
+firebase_app_id_file.json
+firebase_options.dart
