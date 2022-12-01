@@ -46,46 +46,49 @@ class _MyWidgetState extends State<MyWidget> {
     final reverseList = _list.reversed.toList();
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Container(
-                height: double.infinity,
-                alignment: Alignment.topCenter,
-                child: ListView.builder(
-                  itemCount: reverseList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Center(
-                      child: Text(
-                        reverseList[index],
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    autofocus: true,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Container(
+                  height: double.infinity,
+                  alignment: Alignment.topCenter,
+                  child: ListView.builder(
+                    itemCount: reverseList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Center(
+                        child: Text(
+                          reverseList[index],
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      );
+                    },
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _list.add(_controller.text);
-                      _controller.clear();
-                    });
-                  },
-                  child: const Text('送信'),
-                )
-              ],
-            )
-          ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _controller,
+                      autofocus: true,
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _list.add(_controller.text);
+                        _controller.clear();
+                      });
+                    },
+                    child: const Text('送信'),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
