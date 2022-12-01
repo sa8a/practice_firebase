@@ -1,16 +1,23 @@
-# practice_firebase
+# Flutter x Firestore
 
-A new Flutter project.
+- `FlutterFire CLI` でFirebaseプロジェクトの立ち上げと設定
+- `Cloud Firestore` にデータ入力とデータ共有
 
-## Getting Started
+## 参考サイト
 
-This project is a starting point for a Flutter application.
+- [公式ドキュメント](https://firebase.google.com/docs/flutter/setup?platform=ios)
+- [【2022年最新】 Flutter × Firebase でアプリを作ろう！](https://blog.flutteruniv.com/flutter-firebase/)
 
-A few resources to get you started if this is your first Flutter project:
+## 注意点
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+GithubのリモートリポジトリにFirebase構成情報をアップロードしないために、プロジェクトルートの.gitignoreに以下2つを追記
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+# Firebase構成情報をアップロードしないため
+google-services.json
+GoogleService-Info.plist
+
+# 以下独自判断で一応追加
+firebase_app_id_file.json
+firebase_options.dart
+```
