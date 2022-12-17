@@ -21,3 +21,8 @@ GoogleService-Info.plist
 firebase_app_id_file.json
 firebase_options.dart
 ```
+## フォロワーさんからのメモ
+
+.envは今の所気にしないで良いと思います。
+
+基本的に.gitignoreに入れるものはそこまで無いですが、Publicリポジトリで開発するのであれば、firebaseの連携をする際に生成される `firebase_options.dart` は `.gitignore` に入れることをお勧めします（データを取得できてしまうので）。
